@@ -4,7 +4,7 @@ import "./js/swipers";
 import productsJson from "./json/products.json";
 
 function setupPlaceholders() {
-  const inputs = document.querySelectorAll('input[type="text"][data-value]');
+  const inputs = document.querySelectorAll("input[data-value]");
   inputs.forEach((input) => {
     const placeholderText = input.getAttribute("data-value");
     input.placeholder = placeholderText;
@@ -406,4 +406,5 @@ let iconMenu = document.querySelector(".icon-menu");
 iconMenu.addEventListener("click", function (e) {
   let menu = document.querySelector(".menu__body");
   menu.classList.toggle("_active");
+  iconMenu.classList.toggle("_active");
 });
