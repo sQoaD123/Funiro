@@ -1,0 +1,78 @@
+@use "style" as style;
+.tips {
+  overflow: hidden;
+  @include style.adaptiv-value("padding-top", 44, 30, 1);
+  @include style.adaptiv-value("padding-bottom", 44, 30, 1);
+}
+.slider-tips {
+  position: relative;
+  &__body {
+    overflow: hidden;
+    @include style.adaptiv-value("margin-left", -32, -15, 1);
+    @include style.adaptiv-value("padding-right", -32, -15, 1);
+    @include style.adaptiv-value("padding", 32, 15, 1);
+  }
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0 0 32px rgba(97, 97, 97, 0.2);
+      }
+    }
+  }
+  &__image {
+    display: block;
+    padding: 0 0 calc(251 / 391 * 100%) 0;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    flex: 1 1 auto;
+    align-items: flex-start;
+  }
+  &__title {
+    flex: 1 1 auto;
+    color: inherit;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: color 0.3s ease 0s;
+    @include style.adaptiv-value("font-size", 24, 18, 1);
+    &:not(:last-child) {
+      margin: 0 0 calc(8 / 24 * 1em) 0;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--orange-color);
+      }
+    }
+  }
+  &__text {
+    color: var(--grey-color);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  &__dots {
+    justify-content: center;
+    @include style.adaptiv-value("padding-top", 8, 0, 1);
+  }
+  &__arrows {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: calc(100% - 48px);
+    left: 24px;
+    z-index: 5;
+    justify-content: space-between;
+    @media (min-width: style.$md1) {
+      left: -24px;
+      width: calc(100% + 48px);
+    }
+    @media (max-width: style.$md3) {
+      display: none;
+    }
+  }
+}

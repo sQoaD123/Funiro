@@ -1,0 +1,55 @@
+@use "libs/normalize";
+@use "style/nullstyle";
+@use "style/style" as style;
+@use "style/ui";
+@use "style/header";
+@use "style/footer";
+@use "style/main-slider";
+@use "style/advantages";
+@use "style/products";
+@use "style/rooms";
+@use "style/tips";
+@use "style/furniture";
+body {
+  font-family: "Gilroy";
+  font-size: 16px;
+  color: #3a3a3a;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.imgs {
+  display: none;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 100%;
+}
+.page {
+  flex: 1 1 auto;
+}
+._ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  img {
+    display: none;
+  }
+}
+._ibg img {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+._container {
+  max-width: 1270px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
